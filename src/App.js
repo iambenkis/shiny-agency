@@ -9,26 +9,33 @@ import Results from './pages/Results'
 import Freelances from './pages/Freelances'
 import colors from './colors'
 import { createGlobalStyle } from 'styled-components'
-
-const GlobalStyle = createGlobalStyle`
-  div {
-    font-family: 'Trebuchet MS', Helvetica, sans-serif;
-  }
-`
+import Footer from './components/Footer'
+import { ThemeProvider, SurveyProvider } from './utils/context'
+import GlobalStyle from './style/GlobalStyle'
+// const GlobalStyle = createGlobalStyle`
+//   div {
+//     font-family: 'Trebuchet MS', Helvetica, sans-serif;
+//   }
+// `
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <GlobalStyle />
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/survey/:questionNumber" element={<Survey />} />
-          <Route path="/results/" element={<Results />} />
-          <Route path="/freelances/" element={<Freelances />} />
-          <Route path="*" element={<Error />} />
-        </Routes>
+        <ThemeProvider>
+          <SurveyProvider>
+            <GlobalStyle />
+            <Header />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/survey/:questionNumber" element={<Survey />} />
+              <Route path="/results/" element={<Results />} />
+              <Route path="/freelances/" element={<Freelances />} />
+              <Route path="*" element={<Error />} />
+            </Routes>
+            <Footer />
+          </SurveyProvider>
+        </ThemeProvider>
       </Router>
     </div>
   )

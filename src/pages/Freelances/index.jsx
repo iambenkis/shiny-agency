@@ -1,12 +1,15 @@
 import DefaultPicture from '../../assets/profile.png'
 import Card from '../../components/Card'
 import styled from 'styled-components'
+import { Loader } from '../../utils/Atoms'
+import { useEffect, useState } from 'react'
+import { useFetch } from '../../utils/hooks'
 
 const CardsContainer = styled.div`
   display: grid;
   gap: 40px;
   grid-template-rows: 200px 200px;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 `
 
 const StyledFreelances = styled.div`
@@ -26,42 +29,37 @@ const StyledParagraph = styled.p`
 const StyleTitle = styled.h1`
   font-size: 1.5rem;
 `
-
-const freelanceProfiles = [
-  {
-    name: 'Jane Doe',
-    jobTitle: 'Devops',
-    picture: DefaultPicture,
-  },
-  {
-    name: 'John Doe',
-    jobTitle: 'Developpeur frontend',
-    picture: DefaultPicture,
-  },
-  {
-    name: 'Jeanne Biche',
-    jobTitle: 'Développeur Fullstack',
-    picture: DefaultPicture,
-  },
-  {},
-]
 function Freelances() {
+  const { data, isLoading, error } = useFetch(
+    'http://localhost:8000/freelances',
+  )
+  const { freelancersList } = data
+
+  if (error) {
+    return <div>Something went wrong...</div>
+  }
+
   return (
     <StyledFreelances>
       <StyleTitle>Trouvez votre prestataire </StyleTitle>
       <StyledParagraph>
         Chez Shiny nous réunissons les meilleurs profils pour vous.
       </StyledParagraph>
-      <CardsContainer>
-        {freelanceProfiles.map((profile, index) => (
-          <Card
-            key={`${profile.name}-${index}`}
-            label={profile.jobTitle}
-            picture={profile.picture}
-            title={profile.name}
-          />
-        ))}
-      </CardsContainer>
+      {isLoading && !freelancersList ? (
+        <Loader />
+      ) : (
+        <CardsContainer>
+          {freelancersList &&
+            freelancersList.map((profile, index) => (
+              <Card
+                key={`${profile.name}-${index}`}
+                label={profile.jobTitle}
+                picture={profile.picture}
+                title={profile.name}
+              />
+            ))}
+        </CardsContainer>
+      )}
     </StyledFreelances>
   )
 }
