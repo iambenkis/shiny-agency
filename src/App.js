@@ -1,4 +1,4 @@
-import logo from './logo.svg'
+// import logo from './logo.svg'
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
@@ -7,16 +7,11 @@ import Header from './components/Header'
 import Error from './components/Error'
 import Results from './pages/Results'
 import Freelances from './pages/Freelances'
-import colors from './colors'
-import { createGlobalStyle } from 'styled-components'
+// import colors from './colors'
+// import { createGlobalStyle } from 'styled-components'
 import Footer from './components/Footer'
 import { ThemeProvider, SurveyProvider } from './utils/context'
 import GlobalStyle from './style/GlobalStyle'
-// const GlobalStyle = createGlobalStyle`
-//   div {
-//     font-family: 'Trebuchet MS', Helvetica, sans-serif;
-//   }
-// `
 
 function App() {
   return (
