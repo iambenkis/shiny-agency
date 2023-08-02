@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { styled } from 'styled-components'
 import logo from '../../assets/logo.png'
+import { useTheme } from '../../utils/hooks'
 
 export const StyledLink = styled(Link)`
   color: #8186a0;
@@ -40,11 +41,16 @@ const StyledDiv = styled.div`
 `
 
 const Header = () => {
+  const { theme } = useTheme()
+
+  const StyleLogo = styled.h1`
+    color: ${theme === 'dark' ? '#fff' : '#000'};
+  `
   return (
     <StyledNav>
       <StyledDiv>
         <StyledLogo src={logo} alt="logo" />
-        <h1>Shiny</h1>
+        <StyleLogo>Shiny</StyleLogo>
       </StyledDiv>
       <LinkContainer>
         <StyledLink to="/">Home</StyledLink>
