@@ -10,7 +10,6 @@ const StyledGlobalStyle = createGlobalStyle`
     body { 
         background-color: ${(props) =>
           props.isDarkMode ? '#2F2E41' : 'white'};
-        color: ${(props) => (props.isDarkMode ? 'white' : 'black')};
     }
 `
 
