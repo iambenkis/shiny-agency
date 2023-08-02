@@ -40,13 +40,17 @@ const CardDescription = styled.div`
   height: 55%;
 `
 
+const StyleSpan = styled.span`
+  color: '#000000' !important;
+`
+
 function Card({ label, title, picture }) {
   return (
     <CardWrapper>
       <CardLabel>{label}</CardLabel>
       <CardDescription>
         <CardImage src={picture} alt="freelance" />
-        <span>{title}</span>
+        <StyleSpan>{title}</StyleSpan>
       </CardDescription>
     </CardWrapper>
   )
