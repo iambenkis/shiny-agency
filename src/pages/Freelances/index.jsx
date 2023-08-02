@@ -1,8 +1,8 @@
-import DefaultPicture from '../../assets/profile.png'
+// import DefaultPicture from '../../assets/profile.png'
 import Card from '../../components/Card'
 import styled from 'styled-components'
 import { Loader } from '../../utils/Atoms'
-import { useEffect, useState } from 'react'
+// import { useEffect, useState } from 'react'
 import { useFetch } from '../../utils/hooks'
 
 const CardsContainer = styled.div`

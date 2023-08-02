@@ -1,10 +1,11 @@
 import { useParams, Link } from 'react-router-dom'
 import { styled } from 'styled-components'
 import colors from '../../colors'
-import { useEffect, useState, useContext } from 'react'
+import { useContext } from 'react'
 import { SurveyContext } from '../../utils/context'
 import { Loader } from '../../utils/Atoms'
 import { useFetch } from '../../utils/hooks'
+import { useTheme } from '../../utils/hooks'
 
 const ReplyBox = styled.button`
   border: none;
@@ -29,6 +30,7 @@ const ReplyBox = styled.button`
 const ReplyWrapper = styled.div`
   display: flex;
   flex-direction: row;
+  margin: 40px 0;
 `
 
 const SurveyContainer = styled.div`
@@ -52,6 +54,7 @@ const Survey = () => {
   const { answers, saveAnswers } = useContext(SurveyContext)
   const { data, isLoading, error } = useFetch('http://localhost:8000/survey')
   const { surveyData } = data
+  const { theme } = useTheme()
   // saveAnswers([1, 2, 3, 4, 5])
 
   // console.log(answers)
@@ -92,18 +95,29 @@ const Survey = () => {
       `}
   `
 
+  const StyleQuestion = styled.h2`
+    color: ${theme === 'light' ? '#000' : '#fff'};
+  `
+
+  const StyleQuestionTitle = styled.h1`
+    color: ${theme === 'light' ? '#000' : '#fff'};
+  `
+
   if (error) {
     return <div>Something went wrong...</div>
   }
   // console.log(surveyData, 'data')
   return (
     <SurveyContainer>
-      <h1>Questionnaire {questionNumber}</h1>
+      <StyleQuestionTitle>Questionnaire {questionNumber}</StyleQuestionTitle>
 
       {isLoading ? (
         <Loader />
       ) : (
-        <h2> {surveyData && surveyData[questionNumber]}</h2>
+        <StyleQuestion>
+          {' '}
+          {surveyData && surveyData[questionNumber]}
+        </StyleQuestion>
       )}
       {answers && (
         <ReplyWrapper>

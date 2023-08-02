@@ -1,4 +1,4 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import styled from 'styled-components'
 import { StyledLink } from '../../components/Header'
 import homeImg from '../../assets/undraw_Resume_re_hkth 1.png'
@@ -36,7 +36,7 @@ const StyleHomeImg = styled.img`
 `
 
 const Home = () => {
-  const [size, setSize] = useState(1)
+  // const [size, setSize] = useState(1)
 
   return (
     <HomeContainer>
