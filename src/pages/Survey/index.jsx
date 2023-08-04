@@ -52,7 +52,9 @@ const Survey = () => {
   const prevQuestion = questionNumberInt === 1 ? 1 : questionNumberInt - 1
   const nextQuestion = questionNumberInt + 1
   const { answers, saveAnswers } = useContext(SurveyContext)
-  const { data, isLoading, error } = useFetch('http://localhost:8000/survey')
+  const { data, isLoading, error } = useFetch(
+    'https://itchy-tan-dalmatian.cyclic.app/survey',
+  )
   const { surveyData } = data
   const { theme } = useTheme()
   // saveAnswers([1, 2, 3, 4, 5])
@@ -109,7 +111,7 @@ const Survey = () => {
   // console.log(surveyData, 'data')
   return (
     <SurveyContainer>
-      <StyleQuestionTitle>Questionnaire {questionNumber}</StyleQuestionTitle>
+      <StyleQuestionTitle>Question {questionNumber}</StyleQuestionTitle>
 
       {isLoading ? (
         <Loader />
@@ -125,23 +127,23 @@ const Survey = () => {
             onClick={() => saveReply(true)}
             isSelected={answers[questionNumber] === true}
           >
-            Oui
+            Yes
           </ReplyBox>
           <ReplyBox
             onClick={() => saveReply(false)}
             isSelected={answers[questionNumber] === false}
           >
-            Non
+            No
           </ReplyBox>
         </ReplyWrapper>
       )}
       <WrapperLinks>
         <StyledLink to={`/survey/${prevQuestion}`}>prev</StyledLink>
         {surveyData && surveyData[questionNumberInt + 1] ? (
-          <StyledLink to={`/survey/${nextQuestion}`}>Suivant</StyledLink>
+          <StyledLink to={`/survey/${nextQuestion}`}>next</StyledLink>
         ) : (
           <StyledLink to="/results" $isResult>
-            Résultats
+            Resultats
           </StyledLink>
         )}
       </WrapperLinks>

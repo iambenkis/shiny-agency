@@ -4,7 +4,7 @@ import { useFetch } from '../../utils/hooks'
 import { styled } from 'styled-components'
 import colors from '../../colors'
 import { Loader } from '../../utils/Atoms'
-import { useTheme } from '../../utils/hooks' 
+import { useTheme } from '../../utils/hooks'
 import { StyledLink } from '../../components/Header'
 
 const ResultsContainer = styled.div`
@@ -70,7 +70,7 @@ function Results() {
   const fetchParams = formatFetchParams(answers)
 
   const { data, isLoading, error } = useFetch(
-    `http://localhost:8000/results?${fetchParams}`,
+    `https://itchy-tan-dalmatian.cyclic.app/results?${fetchParams}`,
   )
 
   if (error) {
@@ -86,7 +86,7 @@ function Results() {
   ) : (
     <ResultsContainer theme={theme}>
       <ResultsTitle theme={theme}>
-        Les compétences dont vous avez besoin :
+        The skills you need :
         {resultsData &&
           resultsData.map((result, index) => (
             <JobTitle
@@ -99,7 +99,7 @@ function Results() {
           ))}
       </ResultsTitle>
       <StyledLink $isFullLink to="/freelances">
-        Découvrez nos profils
+        Discover our profiles
       </StyledLink>
       <DescriptionWrapper>
         {resultsData &&

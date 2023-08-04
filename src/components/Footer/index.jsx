@@ -8,7 +8,8 @@ const FooterContainer = styled.footer`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding-top: 60px;
+  padding-top: 1rem;
+  margin-bottom: 1rem;
 `
 
 const NightModeButton = styled.button`
@@ -24,7 +25,7 @@ function Footer() {
   return (
     <FooterContainer>
       <NightModeButton onClick={() => toggleTheme()}>
-        Changer de mode : {theme === 'light' ? '☀️' : '🌙'}
+        Change mode : {theme === 'light' ? '☀️' : '🌙'}
       </NightModeButton>
     </FooterContainer>
   )

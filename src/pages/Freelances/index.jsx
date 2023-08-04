@@ -13,7 +13,7 @@ const CardsContainer = styled.div`
 `
 
 const StyledFreelances = styled.div`
-  margin: 0 3rem 3rem;
+  margin: 0 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -31,7 +31,7 @@ const StyleTitle = styled.h1`
 `
 function Freelances() {
   const { data, isLoading, error } = useFetch(
-    'http://localhost:8000/freelances',
+    'https://itchy-tan-dalmatian.cyclic.app/freelances',
   )
   const { freelancersList } = data
 
@@ -41,9 +41,9 @@ function Freelances() {
 
   return (
     <StyledFreelances>
-      <StyleTitle>Trouvez votre prestataire </StyleTitle>
+      <StyleTitle>Find your provider </StyleTitle>
       <StyledParagraph>
-        Chez Shiny nous réunissons les meilleurs profils pour vous.
+        At Shiny we bring together the best profiles for you.
       </StyledParagraph>
       {isLoading && !freelancersList ? (
         <Loader />

@@ -65,7 +65,7 @@ Card.propTypes = {
 Card.defaultProps = {
   title: 'Benjamin',
   picture: picture,
-  label: 'Développeur frontend',
+  label: 'Frontend developer',
 }
 
 export default Card

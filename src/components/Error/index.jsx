@@ -20,7 +20,7 @@ const Error = () => {
     <ErrorContainer>
       <h1>Oups 🐒</h1>
       <StyledImage src={error} alt="error" />
-      <h3>Il semble qu'il ya un probleme</h3>
+      <h3>It seems there is a problem</h3>
     </ErrorContainer>
   )
 }

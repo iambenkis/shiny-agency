@@ -56,7 +56,7 @@ const Header = () => {
         <StyledLink to="/">Home</StyledLink>
         <StyledLink to="/freelances">Profiles</StyledLink>
         <StyledLink to="/survey/1" $isRounded>
-          Faire le test
+          Take the test
         </StyledLink>
       </LinkContainer>
     </StyledNav>

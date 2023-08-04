@@ -43,11 +43,10 @@ const Home = () => {
       <HomeWrapper>
         <HomeText>
           <h1>
-            Reperez vos besoins, on s'occupe du reste, avec nos meilleurs
-            talents
+            Identify your needs, we take care of the rest, with our best talent
           </h1>
           <StyledLink to="/survey/1" $isRounded>
-            Faire le text
+            Take the test
           </StyledLink>
         </HomeText>
         <StyleHomeImg src={homeImg} alt="home-img"></StyleHomeImg>
