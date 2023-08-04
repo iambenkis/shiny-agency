@@ -10,7 +10,7 @@ const HomeContainer = styled.div`
   flex-direction: column;
   background-color: #f9f9fc;
   margin: 0 6rem;
-  height: 86.5vh;
+  height: 70vh;
 `
 
 const HomeWrapper = styled.div`
