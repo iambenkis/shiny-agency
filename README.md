@@ -81,8 +81,10 @@ Install this project with:
 ### Usage
 
 To run the project:
+```sh
+ npx start
 
-Open the Project in your code editor and start Live Server inside the index.html file.
+```
 
 ### Run tests
 
@@ -147,4 +149,3 @@ Contributions, issues, and feature requests are welcome!
 
 If you like this project please leave a star and a comment.
 
-<p align="right">(<a href="./MIT.md">back to top</a>)</p>
