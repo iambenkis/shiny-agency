@@ -34,14 +34,15 @@ This is **Shiny agency** site, created with React.
 
 <details>
   <summary>React</summary>
-  <summary>JavaScript</summary>
 </details>
 
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
 
-- **Gitflow**
+- **Customer Hooks**
+- **Fetch API**
+- **Dark mode**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
