@@ -36,7 +36,7 @@ This is **Shiny agency** site, created with React.
   <summary>React</summary>
 </details>
 
-<!-- Features -->
+<!-- Features ....-->
 
 ### Key Features <a name="key-features"></a>
 
