@@ -122,9 +122,11 @@ Deployed by GitHub Pages.
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **kerlos bahaa**
+👤  **Benjamin Kisenge**
 
-- GitHub: [Benjamin Kisenge](https://github.com/iambenkis/shiny-agency)
+* GitHub: [@benjamin kisenge](https://github.com/iambenkis).
+* Twitter: [@benjamin kisenge](https://twitter.com/iambenkis).
+* LinkedIn: [benjamin kisenge](https://www.linkedin.com/in/ben-kisenge/).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
